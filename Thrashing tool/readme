@@ -1,0 +1,8 @@
+memoryScanKernel.c does not work do not worry about it for functionality.
+
+It was found that several of the API's i would need for the last step
+will not function except on specific versions of linux that proved very
+hard for me to figure out how to get everything setup for.
+
+testExec.c is just a test program. You can run a.out and type testExec 
+when prompted to by a.out to launch it with thrashing protections.

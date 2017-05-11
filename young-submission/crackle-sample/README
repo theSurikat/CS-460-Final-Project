@@ -1,0 +1,29 @@
+First crack ltk-exchange.pcap to extract the LTK:
+
+    $ crackle -i ltk_exchange.pcap -o foo.pcap
+
+
+    !!!
+    TK found: 000000
+    ding ding ding, using a TK of 0! Just Cracks(tm)
+    !!!
+
+    Warning: packet is too short to be encrypted (1), skipping
+    LTK found: 7f62c053f104a5bbe68b1d896a2ed49c
+    Done, processed 712 total packets, decrypted 3
+
+Then use that LTK to decrypt the second PCAP file:
+
+    $ crackle -l 7f62c053f104a5bbe68b1d896a2ed49c -i encrypted_known_ltk.pcap -o decrypted.pcap
+    Warning: packet is too short to be encrypted (1), skipping
+    Warning: packet is too short to be encrypted (2), skipping
+    Warning: could not decrypt packet! Copying as is..
+    Warning: could not decrypt packet! Copying as is..
+    Warning: could not decrypt packet! Copying as is..
+    Warning: invalid packet (length too long), skipping
+    Done, processed 297 total packets, decrypted 7
+
+For more information, refer to crackle and/or Mike Ryan's web site:
+
+    https://github.com/mikeryan/crackle
+    https://lacklustre.net/bluetooth/

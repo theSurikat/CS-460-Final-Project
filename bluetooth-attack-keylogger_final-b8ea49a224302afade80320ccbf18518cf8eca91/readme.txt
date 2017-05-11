@@ -1,0 +1,5 @@
+Python Keylogger -- by Michael Chen
+
+	In order to work, the infected host needs to have Python2.7 the following external python libraries installed (perhaps through some batch file): pywin32, pyhook.
+	Run "keylogger.py" on the victim host to start recording keystrokes and run "serverlogger.py <victim host's IP>" on some other computer to receive data from the infected host. When both programs are running, the keylogger program on the victim will connect via sockets to the server computer. From there, the person on the server computer will be given a command prompt for a couple of instructions (typing 'help' to see what they do). The keylogger should be persistent, in that as long as the keylogger is running on the victim, the serverlogger program can terminate/restart and always reconnect anytime to the keylogger on the victim.
+	The keylogger saves the keystrokes of the victim to a specified directory (as some define), which is then sent over a socket connection (upon given the command to do so by the host at the server-side).
